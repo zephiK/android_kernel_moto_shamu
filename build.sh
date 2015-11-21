@@ -14,8 +14,8 @@ KERNEL="zImage-dtb"
 DEFCONFIG="hells_defconfig"
 
 # Kernel Details
-BASE_HC_VER="hC"
-VER="-b12-t1-M"
+BASE_HC_VER="Chroma-hC"
+VER="-b12-t1"
 HC_VER="$BASE_HC_VER$VER"
 
 # Vars
@@ -27,7 +27,7 @@ export SUBARCH=arm
 KERNEL_DIR=`pwd`
 REPACK_DIR="${HOME}/Android/Kernel/hC-N6-anykernel-M"
 ZIP_MOVE="${HOME}/Android/Kernel/hC-releases/N6"
-ZIMAGE_DIR="${HOME}/Android/Kernel/hells-Core-N6/arch/arm/boot"
+ZIMAGE_DIR="${HOME}/M/kernel/moto/shamu/arch/arm/boot"
 DB_FOLDER="${HOME}/Dropbox/Kernel-Betas/N6"
 
 # Functions
@@ -41,7 +41,7 @@ function make_kernel {
 		make $DEFCONFIG
 		make $THREAD
 		cp -vr $ZIMAGE_DIR/$KERNEL $REPACK_DIR/kernel
-		mv ${HOME}/Android/Kernel/hC-N6-anykernel-M/kernel/zImage-dtb ${HOME}/Android/Kernel/hC-N6-anykernel-M/kernel/zImage
+        mv ${HOME}/M/kernel/moto/shamu/arch/arm/boot/zImage-dtb ${HOME}/M/kernel/moto/shamu/arch/arm/boot/zImage
 }
 
 function make_zip {
